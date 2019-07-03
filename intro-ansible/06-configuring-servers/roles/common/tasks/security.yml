@@ -1,14 +1,9 @@
 # install security configuration
 - name: ensure python packages are installed
   apt:
-    name: "{{ item }}"
+    name: ['python3-pip', 'python3-dev', 'fail2ban']
     update_cache: yes
   become: yes
-  with_items:
-    - "python3-pip"
-    - "python3-dev"
-    - "fail2ban"
-
 
 - name: enable SSH within the firewall
   ufw: rule=allow port=22
