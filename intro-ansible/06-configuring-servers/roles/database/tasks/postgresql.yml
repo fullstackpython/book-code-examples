@@ -1,12 +1,7 @@
 # install and configure PostgreSQL database
 - name: ensure postgresql database packages are installed
-  apt: name={{ item }}
-  with_items:
-    - postgresql
-    - libpq-dev
-    - python3-psycopg2
-    - postgresql-client
-    - postgresql-client-common
+  apt: 
+    name: ['postgresql', 'libpq-dev', 'python3-psycopg2', 'postgresql-client', 'postgresql-client-common']
   become: yes
 
 
